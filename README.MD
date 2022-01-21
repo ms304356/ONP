@@ -1,1 +1,1 @@
-# This is ONP programme for semester project.
+# This is ONP programme for a semester project.

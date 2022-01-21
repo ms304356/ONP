@@ -1,5 +1,8 @@
 //
-// Created by Mykyta Shemechko.
+//  onp.cpp
+//  ONP
+//
+//  Mykyta Shemechko
 //
 #include <vector>
 #include <string>
@@ -10,14 +13,14 @@
 std::string defaults[] = {"input.txt","onp_output.txt","calculated_output.txt"};
 
 std::string help = "\n"
-                   "\nThis is a programme by Mykyta Shemechko"
-                   "\nIt converts expressions to ONP and calculates their results."
-                   "\nTo use this programme set an input using \"-i\" argument. "
-                   "\nYou can also set outputs (\"-o\" and \"-w\")."
-                   "\n\"-o\" is used to set an output for the converted expression."
-                   "\n\"-w\" is used to set an output for the calculated result."
-                   "\nDefault input filename is \"input.txt\""
-                   "\nDefault outputs are \"onp_output.txt\" and \"calculated_output.txt\" respectively."
+                   "\nProgram napisał Mykyta Shemechko."
+                   "\nTen program konwertuje dowolne wyrażenia arytmetyczne do wyrażenia w ONP i oblicza wartość końcową."
+                   "\nWejście ustawia się argumentem \"-i\". "
+                   "\nWyjścia ustawia się argumentami \"-o\" i \"-w\"."
+                   "\n\"-o\" ustawia plik wyjściowy dla skonwertowanego wyrażenia."
+                   "\n\"-w\" ustawia plik wyjściowy dla wartości końcowej."
+                   "\nDomyślny plik wejściowy to \"input.txt\"."
+                   "\nDomyślne pliki wyjjściowe to \"onp_output.txt\" i \"calculated_output.txt\""
                    "\n";
 
 int p(char c)
@@ -156,6 +159,7 @@ VeSt process_arguments(int argc, const char **argv){
             if (argv[i][1] == 'i') output[0] = argv[i + 1];
             else if (argv[i][1] == 'o') output[1] = argv[i + 1];
             else if (argv[i][1] == 'w') output[2] = argv[i + 1];
+            else {output[3] = "error"; return output;}
         }
     }
     if (output[0] == "" && output[1] == "" && output[2] == ""){

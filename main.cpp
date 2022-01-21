@@ -1,8 +1,8 @@
 //
 //  main.cpp
-//  Semester
+//  ONP
 //
-//  Created by Mykyta Shemechko.
+//  Mykyta Shemechko
 //
 
 #include <iostream>
@@ -16,7 +16,8 @@ int main(int argc, const char* argv[]) {
     std::fstream input, onp_output, calculated_output;
     std::string inputLine;
     VeSt arguments = process_arguments(argc,argv);
-    if (arguments[3] == "help"){std::cout<<help; return 1;}
+    if (arguments[3] == "error") {std::cout<<std::endl<<"Użyto nieznanego argumentu."<<help;return 2;}
+    else if (arguments[3] == "help"){std::cout<<help; return 1;}
     input.open(arguments[0] == "" ? defaults[0] : arguments[0] );
     onp_output.open(arguments[1]=="" ? defaults[1] : arguments[1],std::ios::out|std::fstream::trunc);
     calculated_output.open(arguments[2]=="" ? defaults[2] : arguments[2], std::ios::out|std::fstream::trunc);

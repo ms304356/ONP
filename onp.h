@@ -1,7 +1,9 @@
 //
-// Created by Mykyta Shemechko.
+//  onp.h
+//  ONP
 //
-
+//  Mykyta Shemechko
+//
 #ifndef onp_h
 #define onp_h
 #include <vector>
@@ -34,4 +36,4 @@ std::string onp(std::string input);
 
 VeSt process_arguments(int argc, const char **argv);
 
-#endif //onp_h
+#endif

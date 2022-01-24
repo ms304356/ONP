@@ -7,15 +7,15 @@
 const std::string defaults[] = {"input.txt","onp_output.txt","calculated_output.txt"};
 
 const std::string help = "\n"
-                   "\nProgram napisał Mykyta Shemechko."
-                   "\nTen program konwertuje dowolne wyrażenia arytmetyczne do wyrażenia w ONP i oblicza wartość końcową."
-                   "\nWejście ustawia się argumentem \"-i\". "
-                   "\nWyjścia ustawia się argumentami \"-o\" i \"-w\"."
-                   "\n\"-o\" ustawia plik wyjściowy dla skonwertowanego wyrażenia."
-                   "\n\"-w\" ustawia plik wyjściowy dla wartości końcowej."
-                   "\nDomyślny plik wejściowy to \"input.txt\"."
-                   "\nDomyślne pliki wyjjściowe to \"onp_output.txt\" i \"calculated_output.txt\""
-                   "\n";
+                         "\nProgram napisał Mykyta Shemechko."
+                         "\nTen program konwertuje dowolne wyrażenia arytmetyczne do wyrażenia w ONP i oblicza wartość końcową."
+                         "\nWejście ustawia się argumentem \"-i\". "
+                         "\nWyjścia ustawia się argumentami \"-o\" i \"-w\"."
+                         "\n\"-o\" ustawia plik wyjściowy dla skonwertowanego wyrażenia."
+                         "\n\"-w\" ustawia plik wyjściowy dla wartości końcowej."
+                         "\nDomyślny plik wejściowy to \"input.txt\"."
+                         "\nDomyślne pliki wyjjściowe to \"onp_output.txt\" i \"calculated_output.txt\""
+                         "\n";
 
 int p(char o)
 {
@@ -99,6 +99,7 @@ std::string calculate(std::string input) {
 
 
     std::string output_string; // String wyjściowy
+    if(stos.empty()) return "";
     output_string = std::to_string(stos.top());
     for (int i = 0; i < 3; i++) { output_string.pop_back(); } // Usuń 3 ostatnie miejsca po przecinku
     return output_string;
@@ -126,16 +127,19 @@ std::string onp(std::string input) {
             stos.push(input[i]);
         } // Jeśli nawias otwarty, daj na stos
         else if (input[i] == ')') {
-
+            if(stos.empty()) return ""; // Zwróć string pusty, jeśli wejście źle napisane
             while (stos.top() != '(') {
+                if(stos.empty()) return ""; // Zwróć string pusty, jeśli wejście źle napisane
                 output.push_back(' ');
                 output.push_back(stos.top());
                 stos.pop();
+                if(stos.empty()) return ""; // Zwróć string pusty, jeśli wejście źle napisane
             }
             stos.pop(); // Usuń nawias zamknięty
         } // Jeśli nawias zamknięty, daj wszystkie operatory do nawiasu zamkniętego na wyjście
     }
     while (!stos.empty()) {
+        if (stos.top() =='(' || stos.top() =='(') return ""; // Zwróć string pusty, jeśli wejście źle napisane
         output.push_back(' ');
         output.push_back(stos.top());
         stos.pop();

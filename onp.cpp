@@ -4,9 +4,9 @@
 #include <cctype>
 #include "onp.h"
 
-std::string defaults[] = {"input.txt","onp_output.txt","calculated_output.txt"};
+const std::string defaults[] = {"input.txt","onp_output.txt","calculated_output.txt"};
 
-std::string help = "\n"
+const std::string help = "\n"
                    "\nProgram napisał Mykyta Shemechko."
                    "\nTen program konwertuje dowolne wyrażenia arytmetyczne do wyrażenia w ONP i oblicza wartość końcową."
                    "\nWejście ustawia się argumentem \"-i\". "

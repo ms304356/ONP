@@ -21,10 +21,10 @@ typedef std::stack<char, VeCh> StaCh;
 typedef std::stack<double,VeDb> StaDb;
 
 /** Zmienna, zawierająca domyślne nazwy plików wejścia/wyjścia */
-extern std::string defaults[];
+extern const std::string defaults[];
 
 /** Zmienna, zawierająca krótką informację o tym, jak użyć programu */
-extern std::string help;
+extern const std::string help;
 
 /**
  * Funkcja, zwracająca priorytet operatoru.

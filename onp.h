@@ -20,10 +20,10 @@ typedef std::stack<char, VeCh> StaCh;
 /** Stos zmiennych typu double */
 typedef std::stack<double,VeDb> StaDb;
 
-/** Zmienna, zawierająca domyślne nazwy plików wejścia/wyjścia */
+/** Stała, zawierająca domyślne nazwy plików wejścia/wyjścia */
 extern const std::string defaults[];
 
-/** Zmienna, zawierająca krótką informację o tym, jak użyć programu */
+/** Stałą, zawierająca krótką informację o tym, jak użyć programu */
 extern const std::string help;
 
 /**

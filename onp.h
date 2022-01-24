@@ -23,13 +23,13 @@ typedef std::stack<double,VeDb> StaDb;
 /** Stała, zawierająca domyślne nazwy plików wejścia/wyjścia */
 extern const std::string defaults[];
 
-/** Stałą, zawierająca krótką informację o tym, jak użyć programu */
+/** Stała, zawierająca krótką informację o tym, jak użyć programu */
 extern const std::string help;
 
 /**
- * Funkcja, zwracająca priorytet operatoru.
+ * Funkcja, zwracająca priorytet operatora.
  * @param o Operator
- * @return Priorytet operatoru
+ * @return Priorytet operatora
  */
 int p(char o);
 
@@ -41,7 +41,7 @@ int p(char o);
 bool is_an_operator(char character);
 
 /**
- * Funkcja, rozdzielająca string na wektor stringów (używając spacje)
+ * Funkcja, rozdzielająca string na wektor stringów (używając spacji)
  * @param input Rozdzielany string
  * @return Wektor stringów
  */
@@ -49,7 +49,7 @@ VeSt split(std::string input);
 
 /**
  * Funkcja,  która oblicza wartość końcową wyrażenia w postaci ONP
- * @param input Wyrażenie w postaći ONP
+ * @param input Wyrażenie w postaci ONP
  * @return Wynik końcowy wyrażenia
  */
 std::string calculate(std::string input);
@@ -62,7 +62,7 @@ std::string calculate(std::string input);
 std::string onp(std::string input);
 
 /**
- * Funkcja, obrabiająca argumenty wejściowe programu
+ * Funkcja, interpretująca argumenty wejściowe programu
  * @param argc Ilość argumentów + 1
  * @param argv wskaźnik na tablicę argumentów
  * @return Wektor, zawierający wartości 3 argumentów + element dodatkowy ("help" lub "error")

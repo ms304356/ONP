@@ -14,6 +14,7 @@ int main(int argc, const char* argv[]) {
 
     // Otwarcie plików wejścia/wyjścia
     input.open(arguments[0] == "" ? defaults[0] : arguments[0] );
+    if (!input.is_open()) {std::cout<<std::endl<<"Taki plik wejściowy nie istnieje."<<help; return 2;} // Plik nie został poprawnie otwarty
     // Używany jest fstream::trunc, żeby wyczyścić plik, jeśli już istnieje
     onp_output.open(arguments[1]=="" ? defaults[1] : arguments[1],std::ios::out|std::fstream::trunc);
     calculated_output.open(arguments[2]=="" ? defaults[2] : arguments[2], std::ios::out|std::fstream::trunc);
